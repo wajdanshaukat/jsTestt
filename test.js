@@ -26,6 +26,7 @@ let removeDuplicate = [
   { nested: [1, 2, 3] },
 ];
 
+
 function removeDuplicates() {
   const uniqueArray = [
     ...new Map(
@@ -42,6 +43,9 @@ class Animal {
   speak() {
     console.log("Animal says hello");
   }
+  legs() {
+    console.log("Animal has 4 legs");  
+  }
 }
 
 class Dog extends Animal {
@@ -53,12 +57,17 @@ class Dog extends Animal {
 
 let dog = new Dog();
 console.log(dog.speak());
+console.log(dog.legs());
 
 
 // ⁠Write JavaScript code to create a new HTML element, add it to the DOM, and attach an event listener to it.
-document.createElement("h1");
+// document.createElement("h1");
 document.addEventListener("DOMContentLoaded", function () {
   let h1 = document.createElement("h1");
   h1.innerHTML = "hello world";
   document.body.appendChild(h1);
+  
+  h1.addEventListener("click", function () {
+    h1.innerText = "hello js";
+  });
 });
