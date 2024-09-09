@@ -26,11 +26,16 @@ let removeDuplicate = [
   { nested: [1, 2, 3] },
 ];
 
-function removeDuplicates(arr) {
-  return arr.filter((value, index) => arr.findIndex (other => JSON.stringify(other)
-  === JSON.stringify(value)) === index);
+function removeDuplicates() {
+  const uniqueArray = [
+    ...new Map(
+      removeDuplicate.map((item) => [JSON.stringify(item), item])
+    ).values(),
+  ];
+  return uniqueArray;
 }
 console.log(removeDuplicates(removeDuplicate));
+
 
 // Write a JavaScript class Animal with a method speak(). Then, create a subclass Dog that overrides the speak() method.
 class Animal {
